@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table using Flex and classes</title>
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        #periodic-table {
+            width: 100%;
+            display: flex;
+            /* height: 500px; */
+            /* border: 2px solid red; */
+        }
+        .column{
+            width: 8%;
+            margin: auto;
+            height: 100%;
+            /* border: 1px solid black; */
+        }
+        .element {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: white;
+            display: flex;
+        }
+        #hydrogen{
+            background-color: #ab0200;
+            color: white;
+        }
+        #hName {
+            /* margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto; */
+            margin: auto;
+        }
+        .firstColumn {
+            background-color: #8a9f2c;
+        }
+        
+        .secondColumn {
+            background-color: #ff5654;
+        }
+        .empty {
+            background-color: white;
+            border: 1px solid white;
+            
+        }
+        .thirdColumn{
+            background-color: #ffe6d5;
+            border: 6px solid black;
+            height: 40px;
+            width: 40px;
+        }
+        .column4{
+            width: 50%;
+        }
+        #si{
+            width: 130px;
+            height: 130px;
+            background-color: #899f2c;
+            display: block;
+            border: 2px solid black;
+            padding: 10px 20px 10px 20px;
+            color: black;
+            margin-top: 40px;
+            margin-left: 6px;
+        }
+        .m-0 {
+            margin: 0;
+        }
+        .p-0{
+            padding: 0;
+        }
+        .t-left {
+            text-align: left;
+        }
+        .t-right {
+            text-align: right;
+        }
+        .upperHalf{
+            display: flex;
+        }
+        .font-large{
+            font-size: 48px;
+        }
+        .font-small {
+            font-size: 18px;
+        }
+        .fw-500{
+            font-weight: 500;
+        }
+        .upperHalf .empty {
+            width: 300px;
+            height: 130px;
+
+        }
+        .lowerHalf {
+            display: flex;
+            height: 57%;
+        }
+        .lowerHalf .column{
+            width: 10%;
+            margin: auto;
+            height: 100%;
+            /* border: 1px solid black; */
+        }
+        .fourthColumn {
+            background-color: #1a00fe;
+        }
+        .fourthFirstElement {
+            margin-top: 5px;
+        }
+        .pinkElement {
+            background-color: #aa0187;
+        }
+        .orangeElement {
+            background-color: #ff6600;
+        }
+        .brownElement {
+            background-color: #6d535e;
+        }
+        .greenElement {
+            background-color: #5b9f2b;
+        }
+        .RazzmatazzElement {
+            background-color: #ff0066;
+        }
+        .yellowElement {
+            background-color: #ffcc00;
+        }
+        #title {
+            text-transform: uppercase;
+            font-size: 40px;
+        }
+        .fw-400 {
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .secondColumn div{
+            text-align: center;
+            margin: auto;
+            color: black;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .row {
+            display: flex;
+            width: fit-content;
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+
+        #up {
+            background-color: #46592e;
+        }
+        #down {
+            background-color: #96bc5f;
+        }
+        .bottomElements {
+            margin-top: 50px;
+        }
+        .bottomElements .element {
+            border: 1px solid #685e49;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 40px;
+            height: 40px;
+        }
+        .bottomElements .selectiveElement {
+            border: 1px solid #493828;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .bottomElements .row .element {
+            display: flex;
+        }
+        .bottomElements #up .element div{
+            margin: auto;
+            color: #e4e7e6;
+            font-size: 18px;
+        }
+        .bottomElements #down .element div{
+            margin: auto;
+            color: black;
+            font-size: 18px;
+        }
+        </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="fw-400" id="title">The Periodic Table of elements</h1>
+    <div id="periodic-table">
+        <div class="column">
+            <div class="element" id="hydrogen">
+                <div id="hName">H</div>
+            </div>
+            <div class="element firstColumn"></div>
+            <div class="element firstColumn"></div>
+            <div class="element firstColumn"></div>
+            <div class="element firstColumn"></div>
+            <div class="element firstColumn"></div>
+            <div class="element firstColumn"></div>
+        </div>
+        <div class="column">
+            <div class="element empty"></div>
+            <div class="element secondColumn">
+                <div>4</div>
+            </div>
+            <div class="element secondColumn">
+                <div>12</div>
+            </div>
+            <div class="element secondColumn">
+                <div>20</div>
+            </div>
+            <div class="element secondColumn">
+                <div>38</div>
+            </div>
+            <div class="element secondColumn">
+                <div>56</div>
+            </div>
+            <div class="element secondColumn">
+                <div>88</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element thirdColumn"></div>
+            <div class="element thirdColumn"></div>
+        </div>
+        <div class="column column4">
+            <div class="upperHalf">
+                <div class="element" id="si">
+                    <p class="t-right m-0 p-0 font-small">14</p>
+                    <h1 class="m-0 p-0 font-large fw-500">Si</h1>
+                    <p class="t-left m-0 p-0 font-small">Silicon</p>
+                </div>
+                <div class="element empty"></div>
+            </div>
+            <div class="lowerHalf">
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+                <div class="column">
+                    <div class="element fourthColumn fourthFirstElement"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                    <div class="element fourthColumn"></div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="element empty"></div>
+            <div class="element pinkElement"></div>
+            <div class="element orangeElement"></div>
+            <div class="element orangeElement"></div>
+            <div class="element orangeElement"></div>
+            <div class="element orangeElement"></div>
+            <div class="element brownElement"></div>
+        </div>
+        <div class="column">
+            <div class="element empty"></div>
+            <div class="element greenElement"></div>
+            <div class="element pinkElement"></div>
+            <div class="element pinkElement"></div>
+            <div class="element orangeElement"></div>
+            <div class="element orangeElement"></div>
+            <div class="element brownElement"></div>
+        </div>
+        <div class="column">
+            <div class="element empty"></div>
+            <div class="element greenElement"></div>
+            <div class="element greenElement"></div>
+            <div class="element pinkElement"></div>
+            <div class="element pinkElement"></div>
+            <div class="element orangeElement"></div>
+            <div class="element brownElement"></div>
+        </div>
+        <div class="column">
+            <div class="element empty"></div>
+            <div class="element greenElement"></div>
+            <div class="element greenElement"></div>
+            <div class="element greenElement"></div>
+            <div class="element pinkElement"></div>
+            <div class="element pinkElement"></div>
+            <div class="element brownElement"></div>
+        </div>
+        <div class="column">
+            <div class="element empty"></div>
+            <div class="element RazzmatazzElement"></div>
+            <div class="element RazzmatazzElement"></div>
+            <div class="element RazzmatazzElement"></div>
+            <div class="element RazzmatazzElement"></div>
+            <div class="element RazzmatazzElement"></div>
+            <div class="element brownElement"></div>
+        </div>
+        <div class="column">
+            <div class="element yellowElement"></div>
+            <div class="element yellowElement"></div>
+            <div class="element yellowElement"></div>
+            <div class="element yellowElement"></div>
+            <div class="element yellowElement"></div>
+            <div class="element yellowElement"></div>
+            <div class="element brownElement"></div>
+        </div>
+    </div>
+    <div class="bottomElements">
+        <div class="row" id="up">
+            <div class="element selectiveElement">
+                <div>La</div>
+            </div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element selectiveElement"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element selectiveElement"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element selectiveElement"></div>
+        </div>
+        <div class="row" id="down">
+            <div class="element selectiveElement"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element selectiveElement"></div>
+            <div class="element"></div>
+            <div class="element">
+                <div>Am</div>
+            </div>
+            <div class="element"></div>
+            <div class="element selectiveElement"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element selectiveElement">
+                <div>No</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
